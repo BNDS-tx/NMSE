@@ -112,7 +112,8 @@ public class PlatformIOTests
     public void MetaFileWriter_GetSteamMetaPath_ReturnsCorrectPath(string savePath, string expectedMeta)
     {
         string result = MetaFileWriter.GetSteamMetaPath(savePath);
-        Assert.Equal(expectedMeta, result);
+        // Normalise path separators so the test passes on both Windows (\) and Linux (/)
+        Assert.Equal(NormalisePath(expectedMeta), NormalisePath(result));
     }
 
     [Theory]
@@ -122,8 +123,16 @@ public class PlatformIOTests
     public void MetaFileWriter_GetSwitchMetaPath_ReturnsCorrectPath(string savePath, int metaIndex, string expected)
     {
         string result = MetaFileWriter.GetSwitchMetaPath(savePath, metaIndex);
-        Assert.Equal(expected, result);
+        // Normalise path separators so the test passes on both Windows (\) and Linux (/)
+        Assert.Equal(NormalisePath(expected), NormalisePath(result));
     }
+
+    /// <summary>
+    /// Normalises path separators to forward slashes for cross-platform comparison.
+    /// Path.Combine/GetDirectoryName use OS-native separators, so tests that
+    /// hardcode '/' in InlineData would fail on Windows without normalisation.
+    /// </summary>
+    private static string NormalisePath(string path) => path.Replace('\\', '/');
 
     [Fact]
     public void MetaFileWriter_BytesToUInts_RoundTrip()

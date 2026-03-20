@@ -13,7 +13,7 @@ const SITE_CONFIG = {
   repo: "NMSE",                                                                // Repository name
   releaseTag: "latest",                                                        // Tag used by the CI for rolling builds
   workflowFile: "build-nmse.yml",                                              // Workflow that produces the artifact (fallback)
-  discordInvite: "https://discord.gg/WbDQKKP3us",                              // Replace with actual invite URL
+  discordInvite: "https://discord.gg/WbDQKKP3us",                              // Discord invite link
   userdoc: "https://github.com/vectorcmdr/NMSE/blob/main/docs/user/README.md", // Path to user guide documentation in the repo
   devdoc: "https://github.com/vectorcmdr/NMSE/blob/main/docs/dev/README.md",   // Path to developer documentation in the repo
 };
