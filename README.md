@@ -5,10 +5,11 @@
 ### Open-Source Save Editor for No Man's Sky
 
 [![Build Status][badge-build]][workflow-build]
-[![License][badge-license]][license]
-[![.NET][badge-dotnet]][dotnet]
 [![GitHub Release][badge-release]][releases]
 [![GitHub Stars][badge-stars]][repo]
+
+[![License][badge-license]][license]
+[![.NET][badge-dotnet]][dotnet]
 [![Platform][badge-platform]][releases]
 
 <br />
