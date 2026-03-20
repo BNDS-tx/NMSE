@@ -2,8 +2,6 @@
 
 # NMSE (No Man's Save Editor)
 
-### Open-Source Save Editor for No Man's Sky
-
 [![Build Status][badge-build]][workflow-build]
 [![GitHub Release][badge-release]][releases]
 [![GitHub Stars][badge-stars]][repo]
@@ -11,8 +9,6 @@
 [![License][badge-license]][license]
 [![.NET][badge-dotnet]][dotnet]
 [![Platform][badge-platform]][releases]
-
-<br />
 
 **NMSE** is a free, open-source desktop application for editing *No Man's Sky* save files.<br>
 It supports every platform the game ships on - **Steam**, **GOG**, **Xbox Game Pass**, **PlayStation 4**, and **Nintendo Switch** - and handles each platform's unique file layout, compression, and encryption transparently.<br>
