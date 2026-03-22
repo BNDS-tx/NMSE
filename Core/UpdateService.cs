@@ -17,11 +17,10 @@ public static class UpdateService
     // Change these constants when migrating to the final release repo.
     public const string GitHubOwner = "vectorcmdr";
     public const string GitHubRepo  = "NMSE";
-    public const string ReleaseTag  = "latest";
 
-    /// <summary>GitHub API URL for the rolling release.</summary>
+    /// <summary>GitHub API URL for the latest published release.</summary>
     public static string ReleasesApiUrl =>
-        $"https://api.github.com/repos/{GitHubOwner}/{GitHubRepo}/releases/tags/{ReleaseTag}";
+        $"https://api.github.com/repos/{GitHubOwner}/{GitHubRepo}/releases/latest";
 
     // HttpClient (shared, long-lived)
     private static readonly HttpClient Http = CreateHttpClient();
@@ -267,8 +266,7 @@ public static class UpdateService
         // from assembly metadata means renaming the executable in a rebrand
         // or different distribution won't silently break the updater.
         string exeName = Path.GetFileName(
-            System.Reflection.Assembly.GetEntryAssembly()?.Location
-            ?? Environment.ProcessPath
+            Environment.ProcessPath
             ?? "NMSE.exe");
 
         // Extract zip to a temporary directory
